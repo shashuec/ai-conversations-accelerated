@@ -4,6 +4,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowDown, Play, Phone } from 'lucide-react';
 
 const CTA = () => {
+  const handleConnectWithUs = () => {
+    window.open('https://wa.me/919953053281', '_blank');
+  };
+
   return (
     <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
       <div className="container mx-auto px-6">
@@ -12,16 +16,17 @@ const CTA = () => {
             See ConversAI In Action
           </h2>
           <p className="text-xl mb-12 opacity-90 max-w-2xl mx-auto">
-            Ready to transform your lead management? Book a demo and see how AI can revolutionize your sales process.
+            Ready to transform your lead management? Connect with us and see how AI can revolutionize your sales process.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Button 
               size="lg" 
+              onClick={handleConnectWithUs}
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 text-lg font-semibold"
             >
               <Phone className="w-5 h-5 mr-2" />
-              Book a Live Demo
+              Connect with Us
             </Button>
             
             <Button 

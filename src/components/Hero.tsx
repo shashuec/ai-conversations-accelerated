@@ -4,8 +4,12 @@ import { Button } from '@/components/ui/button';
 import { ArrowDown, Phone, MessageSquare, Users } from 'lucide-react';
 
 const Hero = () => {
+  const handleConnectWithUs = () => {
+    window.open('https://wa.me/919953053281', '_blank');
+  };
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center overflow-hidden pt-16">
       {/* Background Animation */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl animate-pulse"></div>
@@ -28,8 +32,12 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold">
-                Book a Live Demo
+              <Button 
+                size="lg" 
+                onClick={handleConnectWithUs}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg font-semibold"
+              >
+                Connect with Us
               </Button>
               <Button variant="outline" size="lg" className="border-2 border-gray-300 hover:border-blue-500 px-8 py-4 text-lg font-semibold">
                 See How It Works

@@ -20,21 +20,11 @@ const Testimonials = () => {
     }
   ];
 
-  const logos = [
-    "TechFlow", "GrowthCorp", "InnovateLabs", "ScaleTech", "NextGen", "CloudFirst"
-  ];
-
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            See How Teams Are Winning With ConversAI
-          </h2>
-        </div>
-        
         {/* Testimonials */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
@@ -60,22 +50,6 @@ const Testimonials = () => {
               </div>
             </div>
           ))}
-        </div>
-        
-        {/* Company Logos */}
-        <div className="text-center">
-          <p className="text-gray-600 mb-8">Trusted by innovative companies worldwide</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
-            {logos.map((logo, index) => (
-              <div 
-                key={index}
-                className="px-6 py-3 bg-white rounded-lg shadow-sm border border-gray-200 animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <span className="text-gray-700 font-semibold">{logo}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
