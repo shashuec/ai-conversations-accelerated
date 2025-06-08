@@ -1,8 +1,15 @@
-
 import React from 'react';
 import { Phone, MessageSquare, Users, FileText, Check } from 'lucide-react';
 
 const Features = () => {
+  const featuresSectionRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    // Add id to the section for navigation
+    if (featuresSectionRef.current) {
+      featuresSectionRef.current.id = 'features';
+    }
+  }, []);
   const features = [
     {
       icon: Phone,
@@ -48,7 +55,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <div ref={featuresSectionRef} className="py-16 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -87,7 +94,7 @@ const Features = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,10 +1,17 @@
-
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, Phone, MessageSquare, Users, FileText, Search, Check } from 'lucide-react';
 
 const HowItWorks = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    // Add id to the section for navigation
+    if (sectionRef.current) {
+      sectionRef.current.id = 'how-it-works';
+    }
+  }, []);
   
   const steps = [
     {
@@ -46,7 +53,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">

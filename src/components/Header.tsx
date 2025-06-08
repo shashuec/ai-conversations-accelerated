@@ -2,10 +2,16 @@
 import React from 'react';
 import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { scrollToElement } from '@/utils/scrollToElement';
 
 const Header = () => {
   const handleConnectWithUs = () => {
     window.open('https://wa.me/919953053281', '_blank');
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToElement(sectionId);
   };
 
   return (
@@ -20,13 +26,25 @@ const Header = () => {
           
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a 
+              href="#features" 
+              onClick={(e) => handleNavClick(e, 'features')} 
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               Features
             </a>
-            <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a 
+              href="#how-it-works" 
+              onClick={(e) => handleNavClick(e, 'how-it-works')} 
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               How It Works
             </a>
-            <a href="#why-conversai" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <a 
+              href="#why-conversai" 
+              onClick={(e) => handleNavClick(e, 'why-conversai')} 
+              className="text-gray-600 hover:text-gray-900 transition-colors"
+            >
               Why ConversAI
             </a>
             <Button 

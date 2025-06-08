@@ -1,8 +1,15 @@
-
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { MessageSquare, Users, Phone, FileText, Check } from 'lucide-react';
 
 const WhyConversAI = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    // Add id to the section for navigation
+    if (sectionRef.current) {
+      sectionRef.current.id = 'why-conversai';
+    }
+  }, []);
   const differentiators = [
     {
       icon: MessageSquare,
@@ -38,7 +45,7 @@ const WhyConversAI = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+    <div ref={sectionRef} className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -111,7 +118,7 @@ const WhyConversAI = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
