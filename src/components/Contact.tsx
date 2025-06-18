@@ -12,13 +12,13 @@ const Contact: React.FC = () => {
       <div className="space-y-4 text-lg">
         <div>
           <strong>Email:</strong>{" "}
-          <a href="mailto:support@conversai.ai" className="text-blue-600 underline">
-            support@conversai.ai
+          <a href="mailto:connect@conversailabs.com" className="text-blue-600 underline">
+            connect@conversailabs.com
           </a>
         </div>
 
         <div>
-          <strong>Phone:</strong> +91-XXXXXXXXXX
+          <strong>Phone:</strong> +91-8076018082
         </div>
 
         <div>

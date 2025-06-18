@@ -52,8 +52,8 @@ const Terms: React.FC = () => (
     <h2 className="text-xl font-semibold mt-6 mb-2">9. Contact Us</h2>
     <p className="mb-4">
       If you have any questions about these Terms & Conditions, please email us at{" "}
-      <a href="mailto:support@conversai.ai" className="text-blue-600 underline">
-        support@conversai.ai
+      <a href="mailto:connect@conversailabs.com" className="text-blue-600 underline">
+        connect@conversailabs.com
       </a>.
     </p>
 
