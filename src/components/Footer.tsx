@@ -1,21 +1,27 @@
-
-import React from 'react';
-import { MessageSquare } from 'lucide-react';
+import React from "react";
+import { MessageSquare } from "lucide-react";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   const footerSections = [
     {
       title: "Product",
-      links: ["Features", "Pricing", "Integrations", "API", "Security"]
+      links: ["Features", "Pricing", "Integrations", "API", "Security"],
     },
     {
       title: "Resources",
-      links: ["Blog", "Case Studies", "Documentation", "Help Center", "Webinars"]
+      links: ["Blog", "Case Studies", "Documentation", "Help Center", "Webinars"],
     },
     {
       title: "Company",
-      links: ["About", "Careers", "Privacy Policy", "Terms of Service", "Contact"]
-    }
+      links: [
+        { name: "Privacy Policy", path: "/policy" },
+        { name: "Terms and Conditions", path: "/terms" },
+        { name: "Cancellation & Refund", path: "/refund" },
+        { name: "Shipping & Delivery", path: "/shipping" },
+        { name: "Contact Us", path: "/contact" },
+      ],
+    },
   ];
 
   return (
@@ -43,41 +49,53 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Links */}
           {footerSections.map((section, index) => (
             <div key={index}>
               <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
               <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a 
-                      href="#" 
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      {link}
-                    </a>
-                  </li>
-                ))}
+                {typeof section.links[0] === "string"
+                  ? (section.links as string[]).map((link, i) => (
+                      <li key={i}>
+                        <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                          {link}
+                        </a>
+                      </li>
+                    ))
+                  : (section.links as { name: string; path: string }[]).map((linkObj, i) => (
+                      <li key={i}>
+                        <NavLink
+                          to={linkObj.path}
+                          className="text-gray-400 hover:text-white transition-colors"
+                        >
+                          {linkObj.name}
+                        </NavLink>
+                      </li>
+                    ))}
               </ul>
             </div>
           ))}
         </div>
-        
+
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400">
-            © 2024 ConversAI Labs. All rights reserved.
-          </p>
+          <p className="text-gray-400">© 2024 ConversAI Labs. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <NavLink to="/policy" className="text-gray-400 hover:text-white transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              Cookie Policy
-            </a>
+            </NavLink>
+            <NavLink to="/terms" className="text-gray-400 hover:text-white transition-colors">
+              Terms & Conditions
+            </NavLink>
+            <NavLink to="/refund" className="text-gray-400 hover:text-white transition-colors">
+              Cancellation & Refund
+            </NavLink>
+            <NavLink to="/shipping" className="text-gray-400 hover:text-white transition-colors">
+              Shipping & Delivery
+            </NavLink>
+            <NavLink to="/contact" className="text-gray-400 hover:text-white transition-colors">
+              Contact Us
+            </NavLink>
           </div>
         </div>
       </div>
