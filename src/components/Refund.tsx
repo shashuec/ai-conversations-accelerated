@@ -36,8 +36,8 @@ const RefundPolicy: React.FC = () => (
     <h2 className="text-xl font-semibold mt-6 mb-2">4. How to Request a Refund</h2>
     <p className="mb-4">
       To initiate a refund, please contact us at{" "}
-      <a href="mailto:support@conversai.ai" className="text-blue-600 underline">
-        support@conversai.ai
+      <a href="mailto:connect@conversailabs.com" className="text-blue-600 underline">
+        connect@conversailabs.com
       </a>{" "}
       with your registered email and payment details. We will review your request and respond within 3-5 business days.
     </p>
